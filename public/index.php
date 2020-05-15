@@ -9,14 +9,16 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 //make this is global to change url at later date. uncomment for local test
-// $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-// $uri = explode( '/', $uri );
+$uri = parse_url($_SERVER['REQUEST_URI']);
+echo "<script>console.log('" .  $uri . "');</script>";
+echo $uri;
+$uri = explode( '/', $uri );
 
 ///this works on local but doesn't work on cloud, $uri = "/". it doesn't take on any extra path, very weird
-// if($uri[0] !== 'api' && $uri[1] !== 'flyers' ){
-//   header("HTTP/1.1 404 Not Found");
-//   exit();
-// }
+if($uri[0] !== 'api' && $uri[1] !== 'flyers' ){
+  header("HTTP/1.1 404 Not Found");
+  exit();
+}
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
