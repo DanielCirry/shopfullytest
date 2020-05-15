@@ -13,6 +13,7 @@ $GLOBALS['uri'] = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $GLOBALS['uri'] = explode( '/', $GLOBALS['uri'] );
 
 if($GLOBALS['uri'][4] !== 'api' && $GLOBALS['uri'][5] !== 'flyers' ){
+  echo $GLOBALS['uri'][2]; echo $GLOBALS['uri'][3];echo $GLOBALS['uri'][4]; echo $GLOBALS['uri'][4];
   header("HTTP/1.1 404 Not Found");
   exit();
 }
