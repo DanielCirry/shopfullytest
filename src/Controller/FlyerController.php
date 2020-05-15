@@ -37,7 +37,7 @@ class FlyerController {
     $result = $this->csvReader->exportCsvv();
     $response['status_code_header'] = 'HTTP/1.1 200 OK';
     $response['body'] = $result;
-    echo $response;
+
     return $response;
  }
 }
