@@ -14,7 +14,7 @@ $GLOBALS['uri'] = explode( '/', $GLOBALS['uri'] );
 echo json_encode($_SERVER['REQUEST_URI']);
 echo "<script>console.log('" . json_encode($_SERVER['REQUEST_URI']) . "');</script>";
 
-if($GLOBALS['uri'][4] !== 'api' && $GLOBALS['uri'][5] !== 'flyers' ){
+if($GLOBALS['uri'][2] !== 'api' && $GLOBALS['uri'][3] !== 'flyers' ){
   header("HTTP/1.1 404 Not Found");
   exit();
 }
