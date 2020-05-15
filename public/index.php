@@ -13,10 +13,10 @@ $GLOBALS['uri'] = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $GLOBALS['uri'] = explode( '/', $GLOBALS['uri'] );
 echo json_encode($GLOBALS['uri']);
 
-if($GLOBALS['uri'][4] !== 'api' && $GLOBALS['uri'][5] !== 'flyers' ){
-  header("HTTP/1.1 404 Not Found");
-  exit();
-}
+// if($GLOBALS['uri'][4] !== 'api' && $GLOBALS['uri'][5] !== 'flyers' ){
+//   header("HTTP/1.1 404 Not Found");
+//   exit();
+// }
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
