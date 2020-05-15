@@ -12,7 +12,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 $GLOBALS['uri'] = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $GLOBALS['uri'] = explode( '/', $GLOBALS['uri'] );
 
-if($GLOBALS['uri'][1] !== 'api' && $GLOBALS['uri'][2] !== 'flyers' ){
+if($GLOBALS['uri'][4] !== 'api' && $GLOBALS['uri'][5] !== 'flyers' ){
   header("HTTP/1.1 404 Not Found");
   exit();
 }
