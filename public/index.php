@@ -8,17 +8,15 @@ header("Access-Control-Allow-Methods: OPTIONS,GET,POST,PUT,DELETE");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-//make this is global to change url at later date. uncomment for local test
-$uri = parse_url($_SERVER['REQUEST_URI']);
-echo "<script>console.log('" .  json_encode($uri) . $uri[1] . "');</script>";
-echo $uri;
-$uri = explode( '/', $uri );
+// //make this is global to change url at later date. uncomment for local test  because on cloud $uri is just "/"
+// $uri = parse_url($_SERVER['REQUEST_URI']);
+// $uri = explode( '/', $uri );
 
-///this works on local but doesn't work on cloud, $uri = "/". it doesn't take on any extra path, very weird
-if($uri[0] !== 'api' && $uri[1] !== 'flyers' ){
-  header("HTTP/1.1 404 Not Found");
-  exit();
-}
+// ///this works on local but doesn't work on cloud, $uri = "/". it doesn't take on any extra path, very weird
+// if($uri[0] !== 'api' && $uri[1] !== 'flyers' ){
+//   header("HTTP/1.1 404 Not Found");
+//   exit();
+// }
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
