@@ -10,7 +10,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 //make this is global to change url at later date. uncomment for local test
 $uri = parse_url($_SERVER['REQUEST_URI']);
-echo "<script>console.log('" .  $uri . "');</script>";
+echo "<script>console.log('" .  $uri[0] . "');</script>";
 echo $uri;
 $uri = explode( '/', $uri );
 
