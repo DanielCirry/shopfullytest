@@ -10,13 +10,13 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 //make this is global tochange url at later date
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-echo "<script>console.log('" .  $uri . "');</script>";
 $uri = explode( '/', $uri );
 
-if($uri[0] !== 'api' && $uri[1] !== 'flyers' ){
-  header("HTTP/1.1 404 Not Found");
-  exit();
-}
+///this works on local but doesn't work on cloud, $uri = "/". it doesn't take on any extra path, very weird
+// if($uri[0] !== 'api' && $uri[1] !== 'flyers' ){
+//   header("HTTP/1.1 404 Not Found");
+//   exit();
+// }
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
