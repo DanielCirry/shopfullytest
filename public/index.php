@@ -11,11 +11,12 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 //this is global so i can change the url at later date
 $GLOBALS['uri'] = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $GLOBALS['uri'] = explode( '/', $GLOBALS['uri'] );
-echo $_SERVER['REQUEST_URI'];
-// if($GLOBALS['uri'][0] !== 'api' && $GLOBALS['uri'][1] !== 'flyers' ){
-//   header("HTTP/1.1 404 Not Found");
-//   exit();
-// }
+echo "<script>console.log('" . json_encode( $_SERVER['REQUEST_URI']) . "');</script>";
+
+if($GLOBALS['uri'][0] !== 'api' && $GLOBALS['uri'][1] !== 'flyers' ){
+  header("HTTP/1.1 404 Not Found");
+  exit();
+}
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
